@@ -1,0 +1,74 @@
+.drop-list {
+  margin-left: 20px;
+  position: relative;
+  z-index: 10;
+  &__label {
+    border-radius: 1.5rem;
+    border: 2px solid $color-purple-grey;
+    @include flex($align: center, $justify: space-between);
+    padding: 0.5rem 0.75rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-blue;
+    }
+
+    span:last-child {
+      color: $color-blue;
+      font-weight: 500;
+    }
+
+    svg {
+      transition: all 0.2s ease-in-out;
+    }
+
+    .rotated {
+      transform: rotate(-180deg);
+
+      path {
+        fill: $color-blue;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    background-color: #fff;
+    border: 2px solid $color-blue;
+    border-radius: 1.5rem;
+
+    &__item {
+      border-bottom: 1px solid $color-purple-grey;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom: none;
+      }
+      :first-child {
+        padding-top: 0.7rem;
+      }
+
+      &:hover span {
+        color: $color-blue;
+      }
+    }
+  }
+}
+
+.clear {
+  margin-left: 10px;
+  transform: rotate(45deg);
+  cursor: pointer;
+
+  path {
+    transition: fill 0.2s ease-in-out;
+  }
+
+  &:hover path {
+    fill: $color-blue;
+  }
+}

@@ -1,0 +1,37 @@
+.search {
+  width: 240px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 1.5rem;
+  border-color: $color-purple-grey;
+  @include flex($align: center);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+
+  button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    > svg {
+      margin-right: 0.5rem;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  > input {
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &:focus-within {
+    border-color: $color-blue;
+
+    > button svg path {
+      fill: $color-blue;
+    }
+  }
+}

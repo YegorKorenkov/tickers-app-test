@@ -1,0 +1,40 @@
+.ticker {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.5fr 1.5fr 1fr max-content 0.5fr;
+  padding: 20px 15px;
+  border: 2px solid $color-purple-grey;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  &__item {
+    @include flex($align: center);
+
+    > span {
+      margin-left: 10px;
+      color: $color-blue;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    &:last-of-type {
+      justify-content: flex-end;
+    }
+  }
+
+  &:hover {
+    border-color: $color-blue;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(57, 57, 57, 0.3);
+    box-shadow: 2px 2px 6px 0px rgba(57, 57, 57, 0.3);
+    transform: translateY(-2px);
+
+    .ticker__item > svg path {
+      fill: $color-blue;
+    }
+  }
+}
